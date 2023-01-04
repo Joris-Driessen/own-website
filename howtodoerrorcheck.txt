@@ -1,0 +1,9 @@
+Voor de veiligheid worden PHP-fouten standaard niet weergegeven, maar u kunt wel de error-log bekijken via Mijn Hostnet.
+
+- Log in op Mijn Hostnet.
+- Klik op 'Diensten' en dan op de domeinnaam.
+- Kies onder het tabje 'Webhosting' voor 'File Manager'.
+- Ga naar 'Logs'.
+
+Meer informatie vindt u op:
+https://www.hostnet.nl/helpdesk/webhosting/php-error-logging-inzien

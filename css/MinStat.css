@@ -1,0 +1,103 @@
+body {
+	background-image: url("../images/background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+}
+header {
+	background-color: rgba(47, 67, 67, 1);
+	color: white;
+	border: 10px solid rgb(111, 131, 131);
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+}
+
+h1 {
+	padding-top: 40px;
+}
+
+.container {
+	background-color: rgb(179, 79, 79);
+	/*margin: auto;*/
+	margin-top: 20px;
+	
+}
+
+label {
+	display: block;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+#content {
+	margin: 10px;
+}
+button {
+	background-color: rgb(179, 79, 79);
+	border: rgba(179, 79, 79, 0.7);
+	box-shadow: 1px 1px grey;
+}
+select {
+	background-color: rgb(179, 79, 79);
+	border: rgba(179, 79, 79, 0.7);
+	box-shadow: 1px 1px grey;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	margin-top: 20px;
+}
+td {
+	border: 2px solid black;
+	font-size: 10px;
+}
+th {
+	border: 2px solid black;
+}
+.num {
+	text-align: center;
+}
+fieldset {
+	padding-bottom: 20px;
+}
+
+p.rct-p {
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: justify;
+}
+
+#p-2 {
+		padding-bottom: 50px;
+}
+
+ul {
+	padding-top: 10px;
+}
+li {
+	list-style: none;
+	font-size: 10px;
+	margin-left: -20px;
+}
+
+
+li a:link {
+	color: black;
+}
+
+li a:visited {
+	color: darkred;
+}
+
+#menu {
+	border: grey solid 1px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	
+}
+p.just {
+	text-align: justify;
+}

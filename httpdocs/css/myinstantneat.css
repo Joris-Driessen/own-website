@@ -1,0 +1,119 @@
+body {
+	background-color: white;
+	margin: auto;
+}
+#container {
+	margin: auto;
+	display: block;
+	width: 650px;
+	height: 1000px;
+	background-color: rgba(255,0,0,0.3);
+	margin-top: 20px;
+	position: relative;
+	border: 5px solid rgba(0,0,255,0.4);
+}
+#header {
+	
+}
+label {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+input {
+	display: block;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+h1 {
+	margin-left: 20px;
+}
+#boe {
+	height: 10px;
+}
+table {
+	margin: auto;
+}
+.unicorn {
+	background: url(pics/pink_fluffy.gif);
+	background-size: 100% 100%;
+	width: 100px;
+	height: 100px;
+}
+
+.derpachu {
+	background: url(pics/derpachu.jpg);
+	background-size: 100% 100%;
+	width: 100px;
+	height: 100px;
+}
+button {
+	border: 1px solid white;
+	background-color: rgba(0,255,0,0.2);
+	border-radius: 5px;
+}
+td {
+	border: 1px solid black;
+	text-align: center;
+	height: 100px;
+	width: 100px;
+}
+.teemo {
+	background: url(pics/teemo.jpg);
+	background-size: 100% 100%;
+	padding: 50px;
+	background-repeat: no-repeat;
+}
+td {
+	width: 100px;
+	height: 100px;
+}
+.button {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.tom {
+	background: url(pics/tom.jpg);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+.chicken {
+	background: url(pics/kip.jpg);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+.chewy {
+	background: url(pics/chewy.jpg);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+.garen {
+	background: url(pics/garen.jpg);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+.torgue {
+	background: url(pics/torgue.jpg);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+.ryan {
+	background-size: 100% 100%;
+	background: url(pics/ryan.jpg);
+	height: 100px;
+	width: 100px;
+}
+.holyhand {
+	background: url(pics/holy_hand_grenade.png);
+	background-size: 100% 100%;
+	height: 100px;
+	width: 100px;
+}
+
+
+
+

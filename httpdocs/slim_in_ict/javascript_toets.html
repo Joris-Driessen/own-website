@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Javascript toets</title>
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="image-video-slideshow-bo/style.css"></link>
+		</head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		</script>
+		<script src="sources/tabledata.js">
+		</script>
+		<script>
+			//Opdracht 1
+			function datum(){
+				const huidige_datum = new Date();
+				const dag = huidige_datum.getDate();
+				let maand = huidige_datum.getMonth();
+				if (maand < 10){
+					maand = '0'+maand;
+					}
+				const jaar = huidige_datum.getFullYear();
+				alert (dag+'-'+maand+'-'+jaar);
+			}
+			//Opdracht 2
+			function bevestig(){
+				const x = confirm("Weet u zeker dat u naar Google wil gaan?");
+				if (x == true){
+					window.location.href = "https://www.google.com"
+				} 
+				
+			}
+			//Opdracht 3
+			function leesJSON(){
+					for (let i = 0; i < persons.length; i++){
+						//alert(persons[i].lastname);
+						let voor = "voornaam"+(i+1);
+						let a = persons[i].firstname;
+						document.getElementById(voor).innerHTML = a;
+						document.getElementById(voor).setAttribute("onclick", "verander_tabel(this.id)")
+						
+						let achter = "achternaam"+(i+1);
+						let b = persons[i].lastname;
+						document.getElementById(achter).innerHTML = b;
+						document.getElementById(achter).setAttribute("onclick", "verander_tabel(this.id)")
+						
+						let leeftijd = "leeftijd"+(i+1);
+						let c = persons[i].age;
+						document.getElementById(leeftijd).innerHTML = c;
+						document.getElementById(leeftijd).setAttribute("onclick", "verander_tabel(this.id)")
+						
+						let dorp = "woonplaats"+(i+1);
+						let d = persons[i].location;
+						document.getElementById(dorp).innerHTML = d;
+						document.getElementById(dorp).setAttribute("onclick", "verander_tabel(this.id)")
+					}
+						
+				}
+			//Opdracht 4
+			function verander_tabel(clickedID){
+				const tabel = prompt("Vul iets in")
+					//alert(clickedID);
+				if (tabel != null){
+					document.getElementById(clickedID).innerHTML = tabel;
+				}
+			}
+			
+			//Opdracht 11
+			function voeg_toe_aan_lijst(){
+				const nieuw = document.getElementById("nieuwe_plaats").value;
+				const lijst = document.createElement("LI");
+				const lijst_item = document.createTextNode(nieuw);
+				lijst.appendChild(lijst_item);
+				document.getElementById("OL").appendChild(lijst);
+			}
+		</script>
+		<script>//Het deel met de jQuery functies.
+			$(document).ready(function(){
+				//Opdracht 5
+				$("#knopvoorborder").click(function(){
+					//alert("hallo");
+					$("#computer").css("border", "5px solid orange");
+				});
+				
+				//Opdracht 6
+				$(".blok").dblclick(function(){
+					const r = Math.ceil(Math.random()*255);
+					const g = Math.ceil(Math.random()*255);
+					const b = Math.ceil(Math.random()*255);
+					const color = "rgb("+r+","+g+","+b+")";
+					//alert(color); alert geplaatst voor het debuggen van de code. In het begin veranderde de kleur niet. Door de alert te maken kon ik kijken wat ik als resultaat kreeg voor de contante 'color'. zo ben ik er achter gekomen dat ik een fout had gemaakt en had spaties tussen r, g, en b gezet. Die moesten verwijdered worden.
+					$(this).css("background-color", color);
+				});
+				
+				//Opdracht 7
+				$("#iframe").focusout(function(){
+					const website = $("#iframe").val();
+					$("iframe").attr("src", website);
+				});
+				
+				//Opdracht 8
+				$(".blok2").click(function(){
+					$(this).css("opacity", "0.5");
+				});
+				
+				//Opdracht 9
+				$("h3").click(function(){
+					$(this).next().toggle(2500, function(){
+						$(this).toggleClass("no_show");
+					});
+				});
+				
+				//Opdracht 10
+				$(".blok.mooi").click(function(){
+					$(this).animate({marginLeft: "+=50px"});
+				});
+				
+				//Opdracht 12
+				$(function(){
+					$(".bo-slider").boSlider({
+						slideShow:true,
+						interval: 10000
+					});
+				});
+				
+				$("#roll").mouseover(function(){
+					setTimeout(function(){window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")},10000);
+				});
+			});
+		</script>
+		
+		<script src="image-video-slideshow-bo/script.js"></script>
+		<body onload="leesJSON(persons)">
+		<div id="container">
+			<div id="content">
+			<header>
+				<h1>JavaScript toets</h1>
+				<span id="slide_show">
+				Opdracht 12 <!- Voeg hier een JavaScript slider in!>
+				<ul class="bo-slider">
+					<li data-url="images/ingang.jpg" data-type="image"></li>
+					<li data-url="images/grote_tent.jpg" data-type="image"></li>
+					<li data-url="images/battlestation.jpg" data-type="image"> </li>
+					<li data-url="images/tent.jpg" data-type="image"></li>
+				</ul>
+				</span>
+				<hr width= 800>
+			</header>
+			<h2>Opdracht 1</h2>
+			
+			<img onclick="datum()" src="images/code.jpg" alt="Plaatje van code" width="300">
+
+			<h2>Opdracht 2</h2>
+			
+			<ul>
+				<li><a href="#" onclick="bevestig()">Google</a></li>
+				<li><a href="https://www.wikipedia.org/">Wikipedia</a></li>
+				<li><a href="https://www.sliminict.nl/">Slim in ict</a></li>
+			</ul>
+			
+			<h2>Opdracht 3/4</h2>
+			
+			<table>
+				<tr>
+					<th>Voornaam</th>
+					<th>Achternaam</th>
+					<th>Leeftijd</th>
+					<th>Woonplaats</th>
+				</tr>
+				
+				<tr>
+					<td id="voornaam1"></td>
+					<td id="achternaam1"></td>
+					<td id="leeftijd1"></td>
+					<td id="woonplaats1"></td>
+				</tr>
+				
+				<tr>
+					<td id="voornaam2"></td>
+					<td id="achternaam2"></td>
+					<td id="leeftijd2"></td>
+					<td id="woonplaats2"></td>
+				</tr>
+				
+				<tr>
+					<td id="voornaam3"></td>
+					<td id="achternaam3"></td>
+					<td id="leeftijd3"></td>
+					<td id="woonplaats3"></td>
+				</tr>
+				
+				<tr>
+					<td id="voornaam4"></td>
+					<td id="achternaam4"></td>
+					<td id="leeftijd4"></td>
+					<td id="woonplaats4"></td>
+				</tr>
+			
+				<tr>
+					<td id="voornaam5"></td>
+					<td id="achternaam5"></td>
+					<td id="leeftijd5"></td>
+					<td id="woonplaats5"></td>
+				</tr>
+				
+				<tr>
+					<td id="voornaam6"></td>
+					<td id="achternaam6"></td>
+					<td id="leeftijd6"></td>
+					<td id="woonplaats6"></td>
+				</tr>
+			</table>
+			
+			<h2>Opdracht 5</h2>
+			
+			<img src="images/mainframe.jpg" alt="plaatje van dikke computer" id="computer" width="300">
+			
+			<p><button id="knopvoorborder">Druk hier voor een border</button></p>
+			<!--<button>test</button> Ik had moeite met het veranderen van de border. Ik wou weten of het aan de click functie lag. Ik had dus een allert gemaakt om te kijken of de click functie de alert toonde. Dit klopte dus het ligt aan de css functie. Ik heb ook snel een test knop gemaakt om te zien of alleen de button met id knopvoorborder het deed.-->
+			<h2>Opdracht 6</h2>
+			
+			<div class="blok red"></div>
+			<div class="blok green"></div>
+			<div class="blok blue"></div>
+			
+			<div class="reset"></div>
+			
+			<h2>Opdracht 7</h2>
+			
+			<iframe src="https://www.sliminict.nl/" width="300"></iframe>
+			<p>Tik hier een url:<input type="text" id="iframe"></p>
+			
+			<h2> Opdracht 8</h2>
+			
+			<div class="blok2 red"></div>
+			<div class="blok2 green schuif1"></div>
+			<div class="blok2 blue schuif2"></div>
+			
+			<h2>Opdracht 9</h2>
+			
+			<h3>Javascript</h3>
+			
+			<p class="no_show">
+				 is een veelgebruikte scripttaal om webpagina's interactief te maken en webapplicaties te ontwikkelen. 
+				 Het script wordt door middel van HTML overgebracht in de webbrowser en wordt hierin uitgevoerd.
+			</p>
+			
+			<h3>Syntaxis</h3>
+			
+			<p class="no_show">
+				De syntaxis van JavaScript vertoont overeenkomsten met de programmeertaal Java, 
+				maar dit is voornamelijk het gevolg van de gemeenschappelijke afkomst van de programmeertaal C. 
+				Omdat beide talen het meest zichtbaar zijn op en rond de browser, maar vooral door de naamgeving, 
+				worden ze vaak met elkaar verward.
+			</p>
+			
+			<h3>Geschiedenis</h3>
+			
+			<p class="no_show">
+				De eerste versie van JavaScript werd in 1995 ontwikkeld door Brendan Eich van Netscape 
+				Communications Corporation voor gebruik in Netscape Navigator. Aanvankelijk was de naam Mocha 
+				en vervolgens LiveScript. De taal werd hernoemd tot JavaScript in de tijd dat in de Netscape-browser 
+				ook ondersteuning voor Java-applets werd ingebouwd.
+			</p>	
+		
+			<h2>Opdracht 10</h2>
+			
+			<p>Blokken!</p>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<p>En nog meer blokken</p>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			<div class="blok mooi"></div>
+			
+			<h2>Opdracht 11</h2>
+			
+			<ol id="OL">
+				<li>Weert</li>
+				<li>Nederweert</li>
+				<li>Leudal</li>
+				<li>Roermond</li>
+				<li>Maasgouw</li>
+				<li>Roerdalen</li>
+				<li>Echt-Susteren</li>
+			</ol>
+			<input type="text" id="nieuwe_plaats">
+			<button id="voeg_plaats_toe" onclick="voeg_toe_aan_lijst()">Voeg toe!</button>
+			<div id="roll">
+			</div>
+			</div>
+		</div>
+		</body>
+	</html>
+	
+	
